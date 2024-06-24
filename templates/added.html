@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mi Lista de Animes</title>
+    <style>
+      .anime {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .anime img {
+        margin-right: 20px;
+        width: 200px;
+      }
+      .anime-description {
+        max-width: 500px;
+      }
+      #pagination {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Mi Lista de Animes</h2>
+
+    <div id="anime-list">
+      {% for anime in my_anime_list %}
+      <div class="anime">
+        <img src="{{ anime.image_url }}" alt="{{ anime.title }}" />
+        <div>
+          <h3>{{ anime.title }}</h3>
+          <p class="anime-description">{{ anime.synopsis }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div id="pagination">
+      {% if prev_page %}
+      <a href="/my-anime-list?page={{ prev_page }}">Anterior</a>
+      {% endif %} {% if next_page %}
+      <a href="/my-anime-list?page={{ next_page }}">Siguiente</a>
+      {% endif %}
+    </div>
+  </body>
+</html>
