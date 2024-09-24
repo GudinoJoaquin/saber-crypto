@@ -1,0 +1,32 @@
+---
+const { title = "Bento Box" } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row justify-around p-8">
+  <!-- Sección 1 -->
+  <div class="bg-violet-500 text-white p-6 rounded-lg shadow-md flex-1 m-4">
+    <h2 class="text-2xl font-bold mb-4">Sección 1</h2>
+    <p>Aquí puedes poner cualquier contenido que desees, como texto, imágenes o botones.</p>
+    <button class="mt-4 px-4 py-2 bg-white text-violet-500 font-semibold rounded hover:bg-gray-200">
+      Acción 1
+    </button>
+  </div>
+
+  <!-- Sección 2 -->
+  <div class="bg-gold-500 text-white p-6 rounded-lg shadow-md flex-1 m-4">
+    <h2 class="text-2xl font-bold mb-4">Sección 2</h2>
+    <p>Esta es otra sección para mostrar más información o contenido relevante.</p>
+    <button class="mt-4 px-4 py-2 bg-white text-gold-500 font-semibold rounded hover:bg-gray-200">
+      Acción 2
+    </button>
+  </div>
+
+  <!-- Sección 3 -->
+  <div class="bg-black text-white p-6 rounded-lg shadow-md flex-1 m-4">
+    <h2 class="text-2xl font-bold mb-4">Sección 3</h2>
+    <p>Aquí puedes agregar más detalles o enlaces a otros recursos.</p>
+    <button class="mt-4 px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-200">
+      Acción 3
+    </button>
+  </div>
+</div>

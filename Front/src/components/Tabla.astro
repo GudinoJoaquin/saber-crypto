@@ -1,0 +1,40 @@
+---
+const cryptoData = [
+  { rank: 1, name: 'Bitcoin', symbol: 'BTC', price: '$55,259.15', change: '+2.20%', marketCap: '$1,084B', volume: '$19,62MM', changePositive: true },
+  { rank: 2, name: 'Ethereum', symbol: 'ETH', price: '$2,306.36', change: '-8.12%', marketCap: '$277,5MM', volume: '$10,47MM', changePositive: false },
+  { rank: 3, name: 'Cardano', symbol: 'ADA', price: '$0,3446', change: '+4.6%', marketCap: '$12,28MM', volume: '$308,5MM', changePositive: true },
+  { rank: 4, name: 'Tether', symbol: 'USDT', price: '$1.00', change: '0.0%', marketCap: '$118,08MM', volume: '$25,97MM', changePositive: true },
+  { rank: 5, name: 'BNB', symbol: 'BNB', price: '$506,22', change: '+2.4%', marketCap: '$73,78MM', volume: '$641,16MM', changePositive: true },
+  { rank: 6, name: 'Dogecoin', symbol: 'DOGE', price: '$0,09723', change: '+0.9%', marketCap: '$14,12MM', volume: '$479,67MM', changePositive: true },
+];
+---
+
+<div class="w-full h-auto py-8">
+  <table class="w-4/6 mx-auto bg-purple-900 text-yellow-300 rounded-lg shadow-lg">
+    <thead class="bg-purple-700 text-yellow-200">
+      <tr>
+        <th class="text-left p-4">#</th>
+        <th class="text-left p-4">Name</th>
+        <th class="text-right p-4">Price</th>
+        <th class="text-right p-4">24h%</th>
+        <th class="text-right p-4">Market cap</th>
+        <th class="text-right p-4">Volumen 24h</th>
+      </tr>
+    </thead>
+    <tbody>
+      {cryptoData.map((coin) => (
+        <tr class="border-b border-purple-600">
+          <td class="p-4">{coin.rank}</td>
+          <td class="p-4 flex items-center gap-2">
+            <span>{coin.name}</span>
+            <span class="text-yellow-500">{coin.symbol}</span>
+          </td>
+          <td class="p-4 text-right">{coin.price}</td>
+          <td class={`p-4 text-right ${coin.changePositive ? 'text-yellow-500' : 'text-red-500'}`}>{coin.change}</td>
+          <td class="p-4 text-right">{coin.marketCap}</td>
+          <td class="p-4 text-right">{coin.volume}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

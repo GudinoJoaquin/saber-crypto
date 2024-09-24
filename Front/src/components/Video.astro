@@ -1,0 +1,15 @@
+---
+const { autoplay = true, loop = true, muted = true, playbackRate = 0.5 } = Astro.props;
+---
+
+<video 
+  class="absolute top-0 left-0 w-full h-full object-cover"
+  style="clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 11% 50%, 0% 0%)
+";
+  autoplay={autoplay} 
+  loop={loop} 
+  muted={muted} 
+>
+  <source src="/video.mp4" type="video/mp4" />
+  Tu navegador no soporta la etiqueta de video.
+</video>

@@ -1,0 +1,59 @@
+---
+import Video from '../components/Video.astro';
+---
+
+<div class="relative h-screen flex text-white z-10">
+  <!-- Contenido a la izquierda -->
+  <div class="flex flex-col justify-center items-center w-[50vw] p-8 space-y-6 z-20">
+    <!-- Título -->
+    <h1 class="text-7xl font-bold flex items-center">
+      <span class="text-white">Saber</span>
+      <span class="text-violet-500">Cripto</span>
+      <img src="/favicon.svg" alt="Logo de SaberCripto" class="h-12 w-12 ml-2" />
+    </h1>
+    
+    <!-- Subtítulo -->
+    <p class="text-2xl text-gray-300 text-center">Aprende sobre las criptomonedas y adentrate en el mundo cripto</p>
+    
+    <!-- Botón como etiqueta button -->
+    <button class="mt-4 px-8 py-3 border-2 border-violet-500 text-violet-500 font-bold rounded-full hover:bg-violet-500 hover:text-white transition-all duration-300">
+      Explorar el Mercado
+    </button>
+
+    <div class="arrow-container mt-4">
+        <div class="arrow"></div>
+      </div>
+
+  </div>
+
+  <!-- Video de fondo a la derecha -->
+  <div class="relative w-[50vw]">
+    <Video />
+
+    <!-- Superposición oscura para el video -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  </div>
+</div>
+
+<style>
+    .arrow-container {
+      animation: bounce 1s infinite;
+    }
+  
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 15px solid white; /* Color de la flecha */
+    }
+  
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+    }
+  </style>

@@ -2,8 +2,13 @@
 interface Props {
 	title: string;
 }
-
 const { title } = Astro.props;
+
+import Presentacion from '../components/Presentacion.astro';
+import Info from '../components/Info.astro';
+import Bento from '../components/Bento.astro';
+import Tabla from '../components/Tabla.astro';
+import Footer from '../components/footer.astro';
 ---
 
 <!doctype html>
@@ -16,6 +21,18 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<Presentacion />
+		<Info />
+		<Bento />
+		<Tabla />
+		<Footer />
+
 	</body>
+	<footer>
+	</footer>
 </html>
+<style>
+	html{
+		background-color: black;
+	}
+</style>
