@@ -1,32 +1,58 @@
----
-const { title = "Bento Box" } = Astro.props;
----
+<style>
+  .neon-text {
+    color: #ffcc00; /* Color dorado */
+    text-shadow: 
+      0 0 1px #ffcc00,
+      0 0 2px #ffcc00;
+  }
 
-<div class="flex flex-col md:flex-row justify-around p-8">
-  <!-- Sección 1 -->
-  <div class="bg-violet-500 text-white p-6 rounded-lg shadow-md flex-1 m-4">
-    <h2 class="text-2xl font-bold mb-4">Sección 1</h2>
-    <p>Aquí puedes poner cualquier contenido que desees, como texto, imágenes o botones.</p>
-    <button class="mt-4 px-4 py-2 bg-white text-violet-500 font-semibold rounded hover:bg-gray-200">
-      Acción 1
-    </button>
+  .bg-filter {
+    background-color: rgba(35, 10, 58, 0.685); /* Color semitransparente */
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem; /* Rounding for the corners */
+    z-index: 1; /* Send to back */
+  }
+
+  .content {
+    position: relative;
+    z-index: 2; /* Bring content to front */
+  }
+</style>
+
+<div class="grid grid-cols-7 grid-rows-6 gap-4 px-20">
+  <div class="col-span-3 row-span-3 bg-cover bg-center h-[300px] bg-[url('/market.jpg')] rounded-lg p-8 transition-shadow hover:shadow-lg flex flex-col justify-between relative">
+      <div class="bg-filter"></div>
+      <div class="content">
+        <h2 class="text-3xl font-semibold text-white">Tendencias del Mercado</h2>
+        <p class="text-gray-300 mt-2">En este apartado, exploramos las <strong class="neon-text">tendencias</strong> actuales que están moldeando el <strong class="neon-text">mercado de criptomonedas</strong>. Desde la <strong class="neon-text">adopción de nuevas tecnologías</strong> hasta <strong class="neon-text">cambios en la regulación</strong>, entender estas tendencias es esencial para cualquier <strong class="neon-text">inversor</strong> que busque maximizar sus oportunidades.</p>
+      </div>
   </div>
 
-  <!-- Sección 2 -->
-  <div class="bg-gold-500 text-white p-6 rounded-lg shadow-md flex-1 m-4">
-    <h2 class="text-2xl font-bold mb-4">Sección 2</h2>
-    <p>Esta es otra sección para mostrar más información o contenido relevante.</p>
-    <button class="mt-4 px-4 py-2 bg-white text-gold-500 font-semibold rounded hover:bg-gray-200">
-      Acción 2
-    </button>
+  <div class="col-span-4 row-span-3 col-start-4 row-start-1 bg-cover bg-center h-[300px] bg-[url('/block.webp')] rounded-lg p-8 transition-shadow hover:shadow-lg flex flex-col justify-between relative">
+      <div class="bg-filter"></div>
+      <div class="content">
+        <h2 class="text-3xl font-semibold text-white">Tecnología Blockchain</h2>
+        <p class="text-gray-300 mt-2">Este apartado se centra en la <strong class="neon-text">tecnología blockchain</strong> que sustenta a las <strong class="neon-text">criptomonedas</strong>. Exploramos cómo funciona, sus <strong class="neon-text">aplicaciones</strong> en diferentes sectores más allá de las finanzas, y su <strong class="neon-text">potencial</strong> para transformar la manera en que realizamos <strong class="neon-text">transacciones</strong> y compartimos información.</p>
+      </div>
   </div>
 
-  <!-- Sección 3 -->
-  <div class="bg-black text-white p-6 rounded-lg shadow-md flex-1 m-4">
-    <h2 class="text-2xl font-bold mb-4">Sección 3</h2>
-    <p>Aquí puedes agregar más detalles o enlaces a otros recursos.</p>
-    <button class="mt-4 px-4 py-2 bg-white text-black font-semibold rounded hover:bg-gray-200">
-      Acción 3
-    </button>
+  <div class="col-span-4 row-span-3 col-start-1 row-start-4 bg-cover bg-center h-[300px] bg-[url('/emerjentes.jpg')] rounded-lg p-8 transition-shadow hover:shadow-lg flex flex-col justify-between relative">
+      <div class="bg-filter"></div>
+      <div class="content">
+        <h2 class="text-3xl font-semibold text-white">Criptomonedas Emergentes</h2>
+        <p class="text-gray-300 mt-2">Aquí analizamos las <strong class="neon-text">criptomonedas emergentes</strong> que están ganando tracción en el <strong class="neon-text">mercado</strong>. Te proporcionamos información sobre las <strong class="neon-text">características únicas</strong> de estas monedas, su <strong class="neon-text">potencial de crecimiento</strong> y cómo podrían convertirse en opciones viables para los <strong class="neon-text">inversores a largo plazo</strong>.</p>
+      </div>
+  </div>
+
+  <div class="col-span-3 row-span-3 col-start-5 row-start-4 bg-cover bg-center h-[300px] bg-[url('derecho.jpg')] rounded-lg p-8 transition-shadow hover:shadow-lg flex flex-col justify-between relative">
+      <div class="bg-filter"></div>
+      <div class="content">
+        <h2 class="text-3xl font-semibold text-white">Aspectos Legales</h2>
+        <p class="text-gray-300 mt-2">Este segmento ofrece un análisis detallado de los <strong class="neon-text">aspectos legales</strong> que afectan a las <strong class="neon-text">criptomonedas</strong>. Desde las <strong class="neon-text">regulaciones</strong> en distintos países hasta las <strong class="neon-text">implicaciones fiscales</strong> para los inversores, es crucial comprender el <strong class="neon-text">entorno legal</strong> para navegar el mercado de manera segura.</p>
+      </div>
   </div>
 </div>

@@ -9,9 +9,9 @@ const cryptoData = [
 ];
 ---
 
-<div class="w-full h-auto py-8">
-  <table class="w-4/6 mx-auto bg-purple-900 text-yellow-300 rounded-lg shadow-lg">
-    <thead class="bg-purple-700 text-yellow-200">
+<div class="w-full h-auto py-40">
+  <table class="w-4/6 mx-auto bg-[#282A36] text-[#F8F8F2] rounded-lg shadow-lg">
+    <thead class="bg-[#44475A] text-[#F8F8F2]">
       <tr>
         <th class="text-left p-4">#</th>
         <th class="text-left p-4">Name</th>
@@ -23,18 +23,23 @@ const cryptoData = [
     </thead>
     <tbody>
       {cryptoData.map((coin) => (
-        <tr class="border-b border-purple-600">
+        <tr class={`border-b border-[#6272a4] hover:bg-[#5A5C7A] transition duration-200`}>
           <td class="p-4">{coin.rank}</td>
           <td class="p-4 flex items-center gap-2">
             <span>{coin.name}</span>
-            <span class="text-yellow-500">{coin.symbol}</span>
+            <span class="text-[#50fa7b]">{coin.symbol}</span>
           </td>
           <td class="p-4 text-right">{coin.price}</td>
-          <td class={`p-4 text-right ${coin.changePositive ? 'text-yellow-500' : 'text-red-500'}`}>{coin.change}</td>
+          <td class={`p-4 text-right ${coin.changePositive ? 'text-[#50fa7b]' : 'text-[#ff5555]'}`}>{coin.change}</td>
           <td class="p-4 text-right">{coin.marketCap}</td>
           <td class="p-4 text-right">{coin.volume}</td>
         </tr>
       ))}
     </tbody>
   </table>
+  <div class="flex justify-center mt-8">
+    <button class="bg-[#44475A] text-[#F8F8F2] font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-[#6272a4] transition duration-200">
+      Explorar Mercado
+    </button>
+  </div>
 </div>
