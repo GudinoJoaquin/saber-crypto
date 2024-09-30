@@ -4,11 +4,7 @@ interface Props {
 }
 const { title } = Astro.props;
 
-import Presentacion from '../components/Presentacion.astro';
-import Info from '../components/Info.astro';
-import Bento from '../components/Bento.astro';
-import Tabla from '../components/Tabla.astro';
-import Footer from '../components/footer.astro';
+
 ---
 
 <!doctype html>
@@ -21,11 +17,8 @@ import Footer from '../components/footer.astro';
 		<title>{title}</title>
 	</head>
 	<body>
-		<Presentacion />
-		<Info />
-		<Bento />
-		<Tabla />
-		<Footer />
+		<slot/>
+		
 
 	</body>
 	<footer>
