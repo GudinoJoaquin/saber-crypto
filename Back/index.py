@@ -79,12 +79,13 @@ def index():
 @app.route('/cryptos', methods=['GET'])
 def cryptos():
     # Utiliza el cliente de CoinGecko para obtener los datos de criptomonedas
-    cryptos = cg.get_coins_markets(vs_currency='usd', order='market_cap_desc', per_page=250, page=1, sparkline=False)
+    cryptos = cg.get_coins_markets(vs_currency='usd', order='market_cap_desc', per_page=10, page=1, sparkline=False)
 
     # Selecciona solo los campos relevantes para enviarlos en formato JSON
     simplified_data = [
         {
             'rank': crypto['market_cap_rank'],
+            'img': crypto['image'],
             'name': crypto['name'],
             'symbol': crypto['symbol'],
             'price_usd': crypto['current_price'],
